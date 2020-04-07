@@ -4,7 +4,7 @@
 :root {
   --primaryColor: #444444;
   --secondaryColor: #ffdd67;
-  --tertiaryColor: #535945;
+  --tertiaryColor: rgb(83, 89, 69);
   --rainbow: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
 }
 
@@ -23,8 +23,51 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 25rem;
-  height: 25rem;
-  background: var(--rainbow);
-  border-radius: .4rem;
+  width: 30rem;
+  height: 30rem;
+  /* background: var(--rainbow); */
+  border-radius: 5%;
+}
+
+.content span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: .5rem solid var(--secondaryColor);
+  border-radius: 50%;
+  animation: animate .5s linear infinite;
+}
+
+.content span:nth-child(1) {
+  width: 10rem;
+  height: 10rem;
+  border: .5rem solid rgba(83, 89, 69, .3);
+  border-top: .5rem solid red;
+}
+
+.content span:nth-child(2) {
+  width: 20rem;
+  height: 20rem;
+  border: .5rem solid rgba(83, 89, 69, .3);
+  border-top: .5rem solid blue;
+  animation-delay: .75s;
+}
+
+.content span:nth-child(3) {
+  width: 30rem;
+  height: 30rem;
+  border: .5rem solid rgba(83, 89, 69, .3);
+  border-top: .5rem solid green;
+  animation-delay: .5s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
